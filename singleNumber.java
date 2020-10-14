@@ -10,8 +10,20 @@ public class Main
 		Vector<Integer> v = new Vector<Integer>();
 		v.add(4);v.add(1);v.add(2);v.add(1);v.add(2);
 		while (v.size()>=1) {
-		    int rand_int = rand.nextInt(v.size());
 		    if (v.size()==1) {
+		        System.out.println(v.get(0));
+		        break;
+		    } 
+		    int rand_int = rand.nextInt(v.size());
+		    int element = v.get(rand_int);
+		    v.remove(rand_int);
+		    if (v.contains(element)) {
+		        v.remove(v.indexOf(element));
+		    } else {
+		        System.out.println("final="+element);
+		        break;
+		    }
+		    /*if (v.size()==1) {
 		        System.out.println(v.get(0));
 		        break;
 		    } 
@@ -24,7 +36,7 @@ public class Main
 		            System.out.println(v.get(rand_int));
 		            break;
 		        }
-		    }
+		    }*/
 		    //System.out.println(v);
 		}
 	}
