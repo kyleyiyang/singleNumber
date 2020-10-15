@@ -41,3 +41,30 @@ public class Main
 		}
 	}
 }
+//input int array instead of vector;
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		int[] arr = {1,-5,1,9,9,-5,6};
+		int n;
+		n=non_repeating(arr);
+		System.out.println(n);
+	}
+	public static int non_repeating (int[] arr) {
+	    Integer myInf = Integer.MAX_VALUE;
+	    for (int i=0;i<=arr.length-1;i++) {
+	        if (arr[i] != myInf) {
+    	        for (int j=i+1;j<arr.length;j++) {
+    	            if (arr[i]==arr[j]) {
+    	                arr[j]=myInf;
+    	                break;
+    	            } else if (j==arr.length-1) {
+    	                return arr[i];
+    	            }
+    	        }
+	        }
+	    }
+	    return arr[arr.length-1];
+	}
+}
